@@ -49,17 +49,6 @@ trait Movement {
   }
 
   def availableMoves(board: Board): Seq[Direction] = {
-    // position.position(board, None) match {
-    //   case (x, y) if (x == 0 && y == 0) => Seq(Down, Right)
-    //   case (x, y) if (x == 0 && y == board.grid.length - 1) => Seq(Down, Left)
-    //   case (x, y) if (x == board.grid.length - 1 && y == 0) => Seq(Up, Right)
-    //   case (x, y) if (x == board.grid.length - 1 && y == board.grid.length - 1) => Seq(Up, Left)
-    //   case (x, _) if (x == 0) => Seq(Down, Left, Right)
-    //   case (x, _) if (x == board.grid.length - 1) => Seq(Up, Left, Right)
-    //   case (_, y) if (y == 0) => Seq(Up, Down, Right)
-    //   case (_, y) if (y == board.grid.length - 1) => Seq(Up, Down, Left)
-    //   case (_, _) => Seq(Up, Down, Left, Right)
-    // }
     position.position(board, None) match {
       // x indicates the row number, y indicates the column number
       case (x, y) if (x == 0 && y == 0) => Seq(Down, Right)

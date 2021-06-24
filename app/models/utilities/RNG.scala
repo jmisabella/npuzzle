@@ -39,19 +39,6 @@ object RNG {
     }
 
   }
-
-  // def positiveInt(rng: RNG, upperBound: Int = Int.MaxValue): (Int, RNG) = {
-  //   def unboundedPositiveInt(rng: RNG): (Int, RNG) = {
-  //     val (i, r) = rng.nextInt
-  //     if (i < 0) {
-  //       (-(i + 1), r) // if i is negative, then add multiply i+1 by -1
-  //     } else {
-  //       (i, r)
-  //     }
-  //   }
-  //   val (i, r) = unboundedPositiveInt(rng)
-  //   ( i % upperBound, r)
-  // }
 }
 
 
