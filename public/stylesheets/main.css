@@ -37,17 +37,24 @@ div#outer-container {
 #game-form select, 
 #game-form button {
   float:left;
+  min-width: 78px;
 }
 #game-form button {
   margin:8px;
+  /* min-width: 75px; */
 }
 #game-form select {
   margin:8px 8px 8px 64px;
   width: 80px !important;
+
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
 }
 
 #controls {
-  width:245px;
+  width:255px;
   margin:auto;
 }
 
