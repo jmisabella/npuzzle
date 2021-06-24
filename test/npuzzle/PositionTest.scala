@@ -1,7 +1,7 @@
 package models
 
 import models.behaviors.Position
-import models.classes.npuzzle.Board
+import models.classes.Board
 import org.scalatest.flatspec.AnyFlatSpec
 
 class PositionTest extends AnyFlatSpec {

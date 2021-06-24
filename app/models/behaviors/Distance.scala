@@ -1,6 +1,6 @@
 package models.behaviors
 
-import models.classes.npuzzle.Board
+import models.classes.Board
 
 trait Distance {
   type _Position <: Position

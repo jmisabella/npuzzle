@@ -1,6 +1,6 @@
 package models.behaviors
 
-import models.classes.npuzzle.{ Board, Direction, Down, Left, Move, Right, State, Up }
+import models.classes.{ Board, Direction, Down, Left, Move, Right, State, Up }
 import models.utilities.RNG
 
 import scala.annotation.tailrec
@@ -14,13 +14,13 @@ trait Bot {
   def random(state: State, incrementMoveCount: Boolean = true): State = {
     val nextMoves = moves.getAllMoves(state.board)
     var (randomInt, nextSeed) = state.seed.boundedPositiveInt(Direction.count)
-    var potentialMove: Either[String, models.classes.npuzzle.Move] = nextMoves(randomInt)
+    var potentialMove: Either[String, models.classes.Move] = nextMoves(randomInt)
 
     while (potentialMove.isLeft) {
       randomInt = (randomInt + 1) % 4
       potentialMove = nextMoves(randomInt)
     }
-    val move = potentialMove.getOrElse(models.classes.npuzzle.Move())
+    val move = potentialMove.getOrElse(models.classes.Move())
     val updatedMoves: Seq[Move] = incrementMoveCount match {
       case false => state.moves
       case true => state.moves ++ Seq(move)

@@ -1,7 +1,7 @@
 package models.web
 
 import models.modules.NPuzzleService
-import models.classes.npuzzle.{ State, Board }
+import models.classes.{ State, Board }
 import akka.actor._
 import play.api.libs.json._
 import play.api.libs.json.Json

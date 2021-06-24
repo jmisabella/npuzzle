@@ -1,4 +1,4 @@
-package models.classes.npuzzle
+package models.classes
 
 sealed trait Direction
 case object Up extends Direction

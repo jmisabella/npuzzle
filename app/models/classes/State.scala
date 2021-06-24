@@ -1,4 +1,4 @@
-package models.classes.npuzzle
+package models.classes
 
 import models.utilities.RNG
 

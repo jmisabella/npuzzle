@@ -1,7 +1,7 @@
 package models
 
 import models.behaviors.{ Movement, Position }
-import models.classes.npuzzle.{ Board, Up, Down, Left, Right, Move }
+import models.classes.{ Board, Up, Down, Left, Right, Move }
 
 import org.scalatest.flatspec.AnyFlatSpec
 

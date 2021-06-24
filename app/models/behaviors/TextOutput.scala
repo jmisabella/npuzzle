@@ -1,6 +1,6 @@
 package models.behaviors
 
-import models.classes.npuzzle.{ Board, State }
+import models.classes.{ Board, State }
 
 trait TextOutput {
 
@@ -15,7 +15,7 @@ trait TextOutput {
     println()
   }
 
-  def printBoard(board: Either[String, models.classes.npuzzle.Move]): Unit = {
+  def printBoard(board: Either[String, models.classes.Move]): Unit = {
     board match {
       case Left(e) => println(e)
       case Right(b) => {
