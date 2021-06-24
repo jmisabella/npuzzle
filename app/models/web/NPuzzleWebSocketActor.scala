@@ -37,7 +37,7 @@ class NPuzzleWebSocketActor(clientActorRef: ActorRef) extends Actor {
             val clientMessage = getMessage(jsValue)
             val state: Either[String, State] = clientMessage match {
               // restrict games to only 3x3 and 4x4, reject everything else
-              case n if (n.length() == 1 && isInt(n) && Seq(3, 4).contains(n.toInt)) => {
+              case n if (n.length() == 1 && isInt(n) && Seq(2, 3, 4).contains(n.toInt)) => {
                 Right(NPuzzleService.newGame(n.toInt)) 
               }
               case n if (n.length() == 1 && isInt(n)) => Left(s"Invalid board size [$n]")
