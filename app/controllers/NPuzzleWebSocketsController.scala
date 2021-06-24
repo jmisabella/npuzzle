@@ -11,7 +11,7 @@ import play.api.libs.json._
 // the ‘implicit’ here is needed for the `ActorFlow.actorRef` below.
 // i thought a Materializer was needed, but it is not.
 // class WebSocketsController @Inject() (cc: ControllerComponents)(implicit system: ActorSystem, mat: Materializer)
-class WebSocketsController @Inject() (cc: ControllerComponents)(implicit system: ActorSystem)
+class NPuzzleWebSocketsController @Inject() (cc: ControllerComponents)(implicit system: ActorSystem)
 extends AbstractController(cc)
 {
     val logger = play.api.Logger(getClass)

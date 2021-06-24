@@ -1,39 +1,61 @@
 @()
 
-@main("Play The N-Puzzle") {
-
-  <form style="padding-top:1.5em;">
+@main("Play the N-Puzzle") {
+<div id='outer-container'>
+  <form id='game-form' style="padding-top:1.5em;">
     <div id='controls'>
-      <select id='board-size' class='form-control'>
+      <select id='board-size' class='form-control btn-secondary'>
+        <option value=''>New</option>
         <option value='3'>3x3</option>
         <option value='4'>4x4</option>
       </select>
-      <br /> 
-
-      <button id="init-button" type="button" class="btn btn-primary">New Game</button>
-      <button id="step-button" type="button" class="btn btn-primary">Step</button>
+      <!-- <br />  -->
+      <button id="step-button" type="button" class="btn btn-secondary">Step</button>
     </div> 
   </form>
+  <br class='clearfix' />
+  <br class='clearfix' />
+  <!-- <br class='clearfix' /> -->
   <div id='remaining-count'></div>
   <br /> 
   <div id='board' class='grid'></div>
   <div id='remaining-moves' ></div> 
   <!-- <div id="message-content" style="opacity:0.5;height:60px;overflow-y:auto !important;background-color:#fff;padding:1em;border-radius:10px;"></div> -->
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </div>
   <script>
-    // (function(w) {
-    //   var org_websocket = w.WebSocket,
-    //       reg_host = location.host.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-    //       pattern = new RegExp("^(ws|wss)://"+reg_host+"(/.*)?$");
 
-    //   w.WebSocket = function(url) {
-    //       if (!pattern.test(url)) {
-    //           alert("cross site websocket");
-    //       }
-    //       return new org_websocket(url);
-    //   };
-    // })(window);
+    $(document).ready(function(){
+        $('#board-size').change(function() {
+          var opval = $(this).val();
+          if (opval != '') {
+            console.log("Sending ...");
+            sendInitToServer();
+            $('#board-size').val("");
+          }
+        });
+
+        $('#board-size').click(function() {
+          if ( $(this).data('clicks') == 1 ) {
+            // Trigger here your function:    
+            console.log('Selected Option: ' + $(this).val() );
+            $(this).data('clicks', 0);
+            var opval = $(this).val();
+            if (opval != '') {
+              console.log("Sending ...");
+              sendInitToServer();
+              $('#board-size').val("");
+            }
+          } else {
+            console.log('first click');
+            $(this).data('clicks', 1);
+          }
+        });
+
+        $('#board-size').focusout( function() {
+          $(this).data('clicks', 0);
+        });
+    });
 
     var webSocket;
     var messageInput;
@@ -76,15 +98,6 @@
         }
     }
 
-    // function appendClientMessageToView(title, message) {
-    //     $("#message-content").append("<span>" + title + ": " + message + "<br /></span>");
-    
-    // }
-
-    // function appendServerMessageToView(title, message) {
-    //     $("#message-content").append("<span>" + title + ": " + message + "<br /><br /></span>");
-    // }
-
     function consoleLog(message) {
         console.log("New message: ", message);
     }
@@ -97,12 +110,12 @@
         // put focus back in the textarea
         $("#message-input").focus();
     });
-    $("#init-button").click(function (e) {
-        console.log("Sending ...");
-        sendInitToServer();
-        // put focus back in the textarea
-        $("#message-input").focus();
-    });
+    // $("#init-button").click(function (e) {
+    //     console.log("Sending ...");
+    //     sendInitToServer();
+    //     // put focus back in the textarea
+    //     $("#message-input").focus();
+    // });
 
     // send the message when the user presses the <enter> key while in the textarea
     $(window).on("keydown", function (e) {
@@ -158,9 +171,10 @@
         }
     }
 
-
-    function moveMarkup(move, gridSize) {
-        var board = move.replace(' ', '');
+    // Converts a given string such as: ((1,2,3),(4,5,6),(7,8,*))
+    // into markup as an unordered list
+    function boardMarkup(b, gridSize) {
+        var board = b.replace(' ', '');
         var markup = '<ul><li>';
         for (var i = 0; i < board.length; i++) {
           if (i % gridSize == 0) {
@@ -221,7 +235,7 @@
         var curr = head(moves);
         var remaining = tail(moves);
         var remainingCount = remaining.length;
-        $('#board').html(moveMarkup(curr));
+        $('#board').html(boardMarkup(curr));
         $('#remaining-moves').text(concatenate(remaining, '|'));
         $('#remaining-count').text('remaining: ' + remainingCount)
       }
