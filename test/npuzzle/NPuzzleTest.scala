@@ -1,6 +1,6 @@
 package models
 
-import models.classes.npuzzle.{Board, Down, Left, Right, State, Up}
+import models.classes.{Board, Down, Left, Right, State, Up}
 import models.behaviors.{ Movement, Position }
 import models.modules.text.TextNPuzzleService._
 import models.modules.text.PositionService._

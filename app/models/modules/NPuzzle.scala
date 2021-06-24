@@ -1,6 +1,6 @@
 package models.modules
 
-import models.behaviors.{ Bot, Distance, Movement, Position, MarkupOutput }
+import models.behaviors.{ Bot, Distance, Movement, Position }
 
 object PositionService extends Position
 
@@ -13,7 +13,7 @@ private object DistanceService extends Distance {
   override val position: Position = PositionService
 }
 
-object NPuzzleService extends Bot with MarkupOutput {
+object NPuzzleService extends Bot {
   override type _Move = Movement
   override type _Distance = Distance
   override val moves: Movement = MovementService

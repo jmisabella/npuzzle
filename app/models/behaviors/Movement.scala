@@ -1,6 +1,6 @@
 package models.behaviors
 
-import models.classes.npuzzle.{ Board, Move, Direction, Down, Left, Right, Up }
+import models.classes.{ Board, Move, Direction, Down, Left, Right, Up }
 
 trait Movement {
   type _Position <: Position

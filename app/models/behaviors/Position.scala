@@ -1,6 +1,6 @@
 package models.behaviors
 
-import models.classes.npuzzle.Board
+import models.classes.Board
 
 trait Position {
   def checkPosition(board: Board, value: Option[Int]): Either[String, (Int, Int)] = {

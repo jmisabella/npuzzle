@@ -1,4 +1,4 @@
-package models.classes.npuzzle
+package models.classes
 
 case class Move(direction: Option[Direction], board: Board) {
   require {
