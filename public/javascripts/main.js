@@ -8,18 +8,24 @@
           }
         });
 
-        $('#board-size').change(function() {
-          // Trigger here your function:    
-          console.log('Selected Option: ' + $(this).val() );
-          var opval = $(this).val();
-          if (opval != '') {
-            console.log("Sending ...");
-            sendInitToServer();
-            $('#board-size').val("");
+        $('#board-size').click(function() {
+          if ( $(this).data('clicks') == 1 ) {
+            // Trigger here your function:    
+            console.log('Selected Option: ' + $(this).val() );
+            $(this).data('clicks', 0);
+            var opval = $(this).val();
+            if (opval != '') {
+              console.log("Sending ...");
+              sendInitToServer();
+              $('#board-size').val("");
+            }
+          } else {
+            console.log('first click');
+            $(this).data('clicks', 1);
           }
         });
-
-        $('#board-size').click(function() {
+        
+        $('#board-size').vclick(function() {
           if ( $(this).data('clicks') == 1 ) {
             // Trigger here your function:    
             console.log('Selected Option: ' + $(this).val() );
