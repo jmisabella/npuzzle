@@ -53,7 +53,7 @@
           }
         });
       
-        $('#board-size').on('vclick', 'li', function() {
+        $('#board-size').on('vclick', 'a', function() {
           if ( $(this).data('clicks') == 1 ) {
             // Trigger here your function:    
             console.log('Selected Option: ' + $(this).val() );
