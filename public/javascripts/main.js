@@ -12,6 +12,9 @@
 
       var viewport = $(window).width();
       if (viewport <= 414) {
+        jQuery('.menu').on("vclick", function() {
+          jQuery('ul').toggleClass("display");
+        });
         jQuery('.menu').on("click", function() {
           jQuery('ul').toggleClass("display");
         });
@@ -27,6 +30,30 @@
         });
 
       $('#board-size').on('click', 'li', function() {
+          if ( $(this).data('clicks') == 1 ) {
+            // Trigger here your function:    
+            console.log('Selected Option: ' + $(this).val() );
+            $(this).data('clicks', 0);
+            var opval = $(this).val();
+            // alert("value: " + opval);
+            if (opval != '' && opval != '0') {
+              console.log("Sending ...");
+              sendInitToServer(opval);
+              // $('#board-size').val("");
+            }
+          } else {
+            console.log('first click');
+            $(this).data('clicks', 1);
+            var opval = $(this).val();
+            if (opval != '' && opval != '0') {
+              console.log("Sending ...");
+              sendInitToServer(opval);
+              // $('#board-size').val("");
+            }
+          }
+        });
+      
+        $('#board-size').on('vclick', 'li', function() {
           if ( $(this).data('clicks') == 1 ) {
             // Trigger here your function:    
             console.log('Selected Option: ' + $(this).val() );
