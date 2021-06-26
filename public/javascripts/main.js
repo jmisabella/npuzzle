@@ -1,48 +1,56 @@
+
+
     $(document).ready(function(){
-        $('#board-size').change(function() {
+      jQuery('.menu li').hover(
+        function() {
+          jQuery('ul', this).stop().slideDown(100);
+        },
+        function() {
+          jQuery('ul', this).stop().slideUp(100);
+        }
+      );
+
+      var viewport = $(window).width();
+      if (viewport <= 414) {
+        jQuery('.menu').on("click", function() {
+          jQuery('ul').toggleClass("display");
+        });
+      }
+
+      $('#board-size').on('change', 'li', function() {
           var opval = $(this).val();
           if (opval != '') {
             console.log("Sending ...");
-            sendInitToServer();
-            $('#board-size').val("");
+            sendInitToServer(opval);
+            // $('#board-size').val("");
           }
         });
 
-        $('#board-size').click(function() {
+      $('#board-size').on('click', 'li', function() {
           if ( $(this).data('clicks') == 1 ) {
             // Trigger here your function:    
             console.log('Selected Option: ' + $(this).val() );
             $(this).data('clicks', 0);
             var opval = $(this).val();
-            if (opval != '') {
+            // alert("value: " + opval);
+            if (opval != '' && opval != '0') {
               console.log("Sending ...");
-              sendInitToServer();
-              $('#board-size').val("");
+              sendInitToServer(opval);
+              // $('#board-size').val("");
             }
           } else {
             console.log('first click');
             $(this).data('clicks', 1);
+            var opval = $(this).val();
+            if (opval != '' && opval != '0') {
+              console.log("Sending ...");
+              sendInitToServer(opval);
+              // $('#board-size').val("");
+            }
           }
         });
         
-        $('#board-size').vclick(function() {
-          if ( $(this).data('clicks') == 1 ) {
-            // Trigger here your function:    
-            console.log('Selected Option: ' + $(this).val() );
-            $(this).data('clicks', 0);
-            var opval = $(this).val();
-            if (opval != '') {
-              console.log("Sending ...");
-              sendInitToServer();
-              $('#board-size').val("");
-            }
-          } else {
-            console.log('first click');
-            $(this).data('clicks', 1);
-          }
-        });
-
-        $('#board-size').focusout( function() {
+      $('#board-size').on('focusout', '*', function() {
           $(this).data('clicks', 0);
         });
     });
@@ -65,7 +73,7 @@
 
     function onClose(event) {
         consoleLog("DISCONNECTED");
-        alert("Disconnected from server. Try refreshing session");
+        alert("Disconnected from server; refresh session.");
     }
 
     function onError(event) {
@@ -109,33 +117,16 @@
         }
     });
 
-    function sendInitToServer() {
-        messageInput = $("#board-size").val();
+    function sendInitToServer(value) {
+        // messageInput = $("#board-size").val();
         // if the trimmed message was blank, return now
-        if ($.trim(messageInput) == "") {
+        if ($.trim(value) == "") {
             return false;
         }
         // create the message as json
         let jsonMessage = {
-            message: messageInput
+            message:  value.toString()
         };
-        // send our json message to the server
-        sendToServer(jsonMessage);
-    }
-
-    function sendStepToServer() {
-
-        messageInput = $("#board-size").val();
-        // if the trimmed message was blank, return now
-        if ($.trim(messageInput) == "") {
-            return false;
-        }
-
-        // create the message as json
-        let jsonMessage = {
-            message: messageInput
-        };
-
         // send our json message to the server
         sendToServer(jsonMessage);
     }
