@@ -59,7 +59,8 @@
 
     function onClose(event) {
         consoleLog("DISCONNECTED");
-        alert("Disconnected from server. Try refreshing session");
+        // alert("Disconnected from server. Try refreshing session");
+        init();
     }
 
     function onError(event) {
