@@ -45,7 +45,7 @@
     var messageInput;
 
     function init() {
-        var port = process.env.PORT || 9000;
+        var port = 80; // process.env.PORT || 9000;
 
         webSocket = new WebSocket(`ws://localhost:${port}/ws`);
         webSocket.onopen = onOpen;
