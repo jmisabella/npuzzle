@@ -45,7 +45,9 @@
     var messageInput;
 
     function init() {
-        webSocket = new WebSocket("wss://localhost:9000/ws");
+        var port = process.env.PORT || 9000 
+
+        webSocket = new WebSocket(`ws://localhost:${port}/ws`);
         webSocket.onopen = onOpen;
         webSocket.onclose = onClose;
         webSocket.onmessage = onMessage;
