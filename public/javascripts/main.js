@@ -45,7 +45,7 @@
     var messageInput;
 
     function init() {
-        webSocket = new WebSocket("ws://localhost:9000/ws");
+        webSocket = new WebSocket("wss://localhost:9000/ws");
         webSocket.onopen = onOpen;
         webSocket.onclose = onClose;
         webSocket.onmessage = onMessage;
@@ -59,8 +59,8 @@
 
     function onClose(event) {
         consoleLog("DISCONNECTED");
-        // alert("Disconnected from server. Try refreshing session");
-        init();
+        //// alert("Disconnected from server. Try refreshing session");
+        // init();
     }
 
     function onError(event) {
