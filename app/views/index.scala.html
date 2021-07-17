@@ -1,4 +1,4 @@
-@()
+@(port: String)
 
 @main("Play the N-Puzzle") {
   <div id='outer-container'>
@@ -17,7 +17,8 @@
     <div id='remaining-count'></div>
     <br /> 
     <div id='board' class='grid'></div>
-    <div id='remaining-moves' ></div> 
+    <div id='remaining-moves' ></div>
+    <div id='server-port'>@port</div>
 
   </div>
 

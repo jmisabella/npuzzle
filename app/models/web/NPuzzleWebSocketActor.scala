@@ -15,7 +15,6 @@ object NPuzzleWebSocketActor {
 
 class NPuzzleWebSocketActor(clientActorRef: ActorRef) extends Actor {
     val logger = play.api.Logger(getClass)
-
     logger.info(s"SimpleWebSocketActor class started")
 
     // incoming messages should really only ever contain numbers, for requesting new games
