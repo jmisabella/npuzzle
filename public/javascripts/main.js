@@ -41,11 +41,18 @@
         });
     });
 
+    function wait(ms){
+      var start = new Date().getTime();
+      var end = start;
+      while(end < start + ms) {
+        end = new Date().getTime();
+      }
+    }
+
     var webSocket;
     var messageInput;
 
     function init() {
-        var port = 80; // process.env.PORT || 9000;
 
         webSocket = new WebSocket(`ws://localhost:${port}/ws`);
         webSocket.onopen = onOpen;
@@ -101,12 +108,13 @@
     // send the message when the user presses the <enter> key while in the textarea
     $(window).on("keydown", function (e) {
         if (e.which == 13) {
-            step();
+            // step();
             return false;
         }
     });
 
     function sendInitToServer() {
+
         messageInput = $("#board-size").val();
         // if the trimmed message was blank, return now
         if ($.trim(messageInput) == "") {

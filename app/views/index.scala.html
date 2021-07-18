@@ -1,6 +1,10 @@
 @(port: String)
 
 @main("Play the N-Puzzle") {
+<script>
+  window.port = @port;
+</script>
+
   <div id='outer-container'>
     <form id='game-form' style="padding-top:1.5em;">
       <div id='controls'>
@@ -18,7 +22,6 @@
     <br /> 
     <div id='board' class='grid'></div>
     <div id='remaining-moves' ></div>
-    <div id='server-port'>@port</div>
 
   </div>
 
