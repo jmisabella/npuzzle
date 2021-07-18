@@ -54,7 +54,7 @@
 
     function init() {
 
-        webSocket = new WebSocket(`wss://playnpuzzle.herokuapp.com:${port}/ws`);
+        webSocket = new WebSocket(`ws://localhost.herokuapp.com:${port}/ws`);
         webSocket.onopen = onOpen;
         webSocket.onclose = onClose;
         webSocket.onmessage = onMessage;
