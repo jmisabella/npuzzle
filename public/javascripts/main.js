@@ -54,7 +54,7 @@
 
     function init() {
 
-        webSocket = new WebSocket(`ws://localhost.herokuapp.com:${port}/ws`);
+        webSocket = new WebSocket(`wss://localhost:${port}/ws`);
         webSocket.onopen = onOpen;
         webSocket.onclose = onClose;
         webSocket.onmessage = onMessage;
