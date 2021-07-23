@@ -56,8 +56,7 @@
 
         var host = window.port == 9000 ? "localhost" : "playnpuzzle.herokuapp.com";
         var protocol = window.port == 9000 ? "ws" : "wss";
-        // webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
-        webSocket = new WebSocket("socks5://i2s4t5fd5enx1y:po9k7i78nsg9gp4hwvhzieg4pafhsw@us-east-static-07.quotaguard.com:1080/ws")
+        webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
         webSocket.onopen = onOpen;
         webSocket.onclose = onClose;
         webSocket.onmessage = onMessage;
