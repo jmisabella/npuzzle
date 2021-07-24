@@ -3,6 +3,16 @@ div#outer-container {
   width:auto;
 }
 
+div#remaining-count {
+  /* margin-top:12px; */
+  /* margin-top:5%; */
+}
+
+.grid {
+  width: 100%;
+  /* float: left; */
+}
+
 .grid ul {
   list-style-type: none;
 }
@@ -36,12 +46,14 @@ div#outer-container {
 
 #remaining-moves {
   visibility: hidden;
+  height:1px !important;
+  width: 1px !important;
 }
 
 #game-form select, 
 #game-form button {
   float:left;
-  min-width: 78px;
+  min-width: 68px;
   /* min-width: 35%; */
 }
 #game-form button {
@@ -63,11 +75,15 @@ div#outer-container {
 
 #controls {
   /* width:255px; */
-  width:35%;
-  margin:auto;
+  text-align:center;
+  width:auto;
+  width:60%;
+  /* margin:auto; */
+  float: right;
 }
 
-div#remaining-count {
-  /* margin-top:12px; */
-  margin-top:5%;
+#controls * {
+  text-align:center;
+  width:auto;
+  /* width:50%; */
 }
