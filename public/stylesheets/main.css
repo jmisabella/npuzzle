@@ -1,5 +1,5 @@
 div#outer-container {
-  text-align:center;
+  /* text-align:center; */
   width:auto;
 }
 
@@ -28,6 +28,10 @@ div#outer-container {
   padding: 9px;
   min-width: 40px;
   height: 40px;
+  /* padding: 5px;
+  min-width: 26px;
+  height: 26px;
+  font-size: 75%; */
 }
 
 #remaining-moves {
@@ -38,14 +42,18 @@ div#outer-container {
 #game-form button {
   float:left;
   min-width: 78px;
+  /* min-width: 35%; */
 }
 #game-form button {
-  margin:8px;
-  /* min-width: 75px; */
+  /* margin:8px; */
+  margin:3%;
 }
 #game-form select {
-  margin:8px 8px 8px 64px;
-  width: 80px !important;
+  /* margin:8px 8px 8px 64px; */
+  /* width: 80px !important; */
+  
+  margin:3% 2% 2% 5%;
+  max-width: 8% !important;
 
   /* for Firefox */
   -moz-appearance: none;
@@ -54,10 +62,12 @@ div#outer-container {
 }
 
 #controls {
-  width:255px;
+  /* width:255px; */
+  width:35%;
   margin:auto;
 }
 
 div#remaining-count {
-  margin-top:12px;
+  /* margin-top:12px; */
+  margin-top:5%;
 }
