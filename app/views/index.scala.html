@@ -9,11 +9,16 @@
     <!-- <br class='clearfix' /> -->
     <form id='game-form' style="padding-top:1.5em;">
       <div id='controls'>
-        <select id='board-size' class='form-control btn-secondary'>
-          <option value=''>New</option>
-          <option value='3'>3x3</option>
-          <option value='4'>4x4</option>
-        </select>
+        
+        <ul id="board-size" class="menu form-control btn-secondary">
+          <li class="parent">
+            <a href="#"><span>New</span></a>
+            <ul>
+              <li value='3' class="menu-option"><a value='3' href="#">3x3</a></li>
+              <li value='4' class="menu-option"><a value='4' href="#">4x4</a></li>
+            </ul>
+          </li>
+        </ul>
         <button id="step-button" type="button" class="btn btn-secondary">Step</button>
       </div> 
     </form>

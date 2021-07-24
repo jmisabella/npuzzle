@@ -1,3 +1,59 @@
+.menu {
+  margin-top: -6px;
+  padding: 0;
+  list-style: none;
+  /* color: #fff; */
+}
+.parent span {
+  letter-spacing: 3px;
+}
+.menu li {
+  float: left;
+  display: block;
+  /* background: #fff; */
+  position: relative;
+  z-index: 500;
+  margin: 0 1px;
+  /* background-color: blue; */
+}
+.menu li a {
+  display: block;
+  line-height: 18px;
+  color: #fff;
+  text-align: left;
+}
+.menu ul {
+  position: absolute;
+  left: -14px;
+  display: none;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  list-style: none;
+  text-indent: 10px;
+}
+.menu ul.display {
+  display: block;
+}
+.menu ul li {
+  width: 150px;
+  float: left;
+}
+.menu ul a {
+  display: block;
+  padding: 8px 5px;
+}
+.menu ul a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+@media (min-width: 415px) {
+    .menu li:hover ul {
+        display: block;
+    }
+}
+
+
+
 div#outer-container {
   text-align:center;
   width:auto;
@@ -50,6 +106,7 @@ div#remaining-count {
   width: 1px !important;
 }
 
+#game-form ul.menu, 
 #game-form select, 
 #game-form button {
   float:left;
@@ -60,12 +117,42 @@ div#remaining-count {
   /* margin:8px; */
   margin:3%;
 }
+
+#game-form ul.menu {
+  margin:8px 8px 8px 44px;
+  /* width: 80px !important; */
+
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+#game-form ul.menu li.parent a,
+#game-form ul.menu li.parent a:hover {
+  text-decoration: none !important;
+}
+
+#game-form ul.menu li.menu-option {
+  background-color: #5a6268 !important;
+  border-color: #6c757d !important;
+}
+
+
+#game-form ul.menu,
+#game-form ul.menu li,
 #game-form select {
   /* margin:8px 8px 8px 64px; */
   /* width: 80px !important; */
   
   margin:3% 2% 2% 5%;
   max-width: 8% !important;
+
+}
+
+#game-form select {
+  margin:8px 8px 8px 44px;
+  /* width: 80px !important; */
 
   /* for Firefox */
   -moz-appearance: none;

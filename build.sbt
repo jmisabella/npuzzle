@@ -6,6 +6,7 @@ version := "0.1"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.13.6"
+sbtVersion := "1.3.8"
 
 libraryDependencies ++= Seq(
   guice,
