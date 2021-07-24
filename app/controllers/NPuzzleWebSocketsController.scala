@@ -19,18 +19,7 @@ extends AbstractController(cc)
     // this method displays the index.scala.html page/template
     def index = Action { implicit request: Request[AnyContent] =>
         logger.info("index page was called")
-        // val key = "JAVA_HOME"
-        val key = "PORT"
-        val myport: String = 
-          try { 
-            if (sys.env(key) != "") 
-              sys.env(key) 
-            else 
-              "9000" 
-          } catch { 
-            case _: Exception => "9000" 
-          } 
-        Ok(views.html.index(myport))
+        Ok(views.html.index())
     }
 
     // our WebSocket. DOCS on WebSocket.accept:
