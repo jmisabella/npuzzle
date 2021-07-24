@@ -25,13 +25,13 @@ div#outer-container {
   background-color: #fff; 
   display: block;
   border: solid 1px #000;
-  padding: 9px;
+  /* padding: 9px;
   min-width: 40px;
-  height: 40px;
-  /* padding: 5px;
+  height: 40px; */
+  padding: 5px;
   min-width: 26px;
   height: 26px;
-  font-size: 75%; */
+  font-size: 75%;
 }
 
 #remaining-moves {
