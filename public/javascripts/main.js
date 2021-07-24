@@ -53,11 +53,14 @@
     var messageInput;
 
     function init() {
-      var test =  location.origin;
-      alert("TEST: " + test);
-      var host = window.port == 9000 ? "localhost" : "playnpuzzle.herokuapp.com";
-      var protocol = window.port == 9000 ? "ws" : "wss";
-      webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
+      
+      // var host = window.port == 9000 ? "localhost" : "playnpuzzle.herokuapp.com";
+      // var protocol = window.port == 9000 ? "ws" : "wss";
+      // webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
+      
+      var host = location.origin.replace(/^https/, 'wss').replace(/^http/, 'ws'); 
+      webSocket = new WebSocket(`${host}/ws`);
+      
       webSocket.onopen = onOpen;
       webSocket.onclose = onClose;
       webSocket.onmessage = onMessage;
