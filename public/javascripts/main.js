@@ -53,15 +53,16 @@
     var messageInput;
 
     function init() {
-
-        var host = window.port == 9000 ? "localhost" : "playnpuzzle.herokuapp.com";
-        var protocol = window.port == 9000 ? "ws" : "wss";
-        webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
-        webSocket.onopen = onOpen;
-        webSocket.onclose = onClose;
-        webSocket.onmessage = onMessage;
-        webSocket.onerror = onError;
-        $("#message-input").focus();
+      var test =  location.origin;
+      alert("TEST: " + test);
+      var host = window.port == 9000 ? "localhost" : "playnpuzzle.herokuapp.com";
+      var protocol = window.port == 9000 ? "ws" : "wss";
+      webSocket = new WebSocket(`${protocol}://${host}:${port}/ws`);
+      webSocket.onopen = onOpen;
+      webSocket.onclose = onClose;
+      webSocket.onmessage = onMessage;
+      webSocket.onerror = onError;
+      $("#message-input").focus();
     }
 
     function onOpen(event) {
