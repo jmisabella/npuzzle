@@ -107,10 +107,10 @@
         $("#message-input").focus();
     });
     
-    // send the message when the user presses the <enter> key while in the textarea
+    // continue to step while user presses the any key
     $(window).on("keydown", function (e) {
-        if (e.which == 13) {
-            // step();
+        if (e.which == 13 || e.which == 32 || e.which == 9) { // 13 is <enter>, 32 is <space>, 9 is <tab>
+            nextMove();
             return false;
         }
     });
