@@ -1,4 +1,4 @@
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#board-size').change(function() {
           var opval = $(this).val();
           if (opval != '') {

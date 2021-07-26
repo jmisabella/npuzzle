@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 div#outer-container {
   text-align:center;
   width:auto;
