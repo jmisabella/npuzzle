@@ -119,12 +119,19 @@
       nextMove();
       return false; 
     });
-
     $("#remaining-moves").on("ontouchmove", function(e) {
       nextMove();
       return false; 
     });
-    
+    $("#step-button").on("ontouchstart", function(e) {
+      nextMove();
+      return false; 
+    });
+    $("#step-button").on("ontouchmove", function(e) {
+      nextMove();
+      return false; 
+    });
+   
     function sendInitToServer() {
 
         messageInput = $("#board-size").val();
