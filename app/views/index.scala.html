@@ -2,18 +2,24 @@
 @main("Play the N-Puzzle") {
   <div id='outer-container'>
     <div id='remaining-count'></div>
-    <br class='clearfix' />
+    <!-- <br class='clearfix' /> -->
+    <div class='controls'>
+      <select id='board-size' class='form-control btn-secondary'>
+        <option value=''>New</option>
+        <option value='3'>3x3</option>
+        <option value='4'>4x4</option>
+      </select>
+    </div> 
+    <br class='clearfix' /> 
+    <br class='clearfix' /> 
+    <br class='clearfix' /> 
+    <br class='clearfix' /> 
     <div id='outer-board'>
       <div id='board' class='grid'></div>
     </div> 
     <!-- <br class='clearfix' /> -->
-    <form id='game-form' style="padding-top:1.5em;">
-      <div id='controls'>
-        <select id='board-size' class='form-control btn-secondary'>
-          <option value=''>New</option>
-          <option value='3'>3x3</option>
-          <option value='4'>4x4</option>
-        </select>
+    <form id='game-form'>
+      <div class='controls'>
         <button id="step-button" type="button" class="btn btn-secondary">Step</button>
       </div> 
     </form>

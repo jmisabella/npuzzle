@@ -61,16 +61,22 @@ div#remaining-count {
   min-width: 68px;
   /* min-width: 35%; */
 }
-#game-form button {
-  /* margin:8px; */
-  margin:3%;
+
+.controls button, 
+.controls select {
+  width: 40%;
+  font-size:x-large;
 }
-#game-form select {
-  /* margin:8px 8px 8px 64px; */
-  /* width: 80px !important; */
+.controls button {
+  /* margin:8px; */
+  margin-left:5%;
+  min-height:80px;
+}
+.controls select {
+  /* margin-bottom:15% !important; */
   
   margin:3% 2% 2% 5%;
-  max-width: 8% !important;
+  /* max-width: 8% !important; */
 
   /* for Firefox */
   -moz-appearance: none;
@@ -78,7 +84,7 @@ div#remaining-count {
   -webkit-appearance: none;
 }
 
-#controls {
+.controls {
   /* width:255px; */
   text-align:center;
   width:auto;
@@ -87,7 +93,7 @@ div#remaining-count {
   float: right;
 }
 
-#controls * {
+.controls * {
   text-align:center;
   width:auto;
   /* width:50%; */
