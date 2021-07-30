@@ -102,10 +102,13 @@
 
     $("#step-button").click(function (e) {
         nextMove();
-        
-        // put focus back in the textarea
-        $("#message-input").focus();
     });
+    
+    $("#board").click(function (e) {
+        nextMove();
+    });
+
+
     
     // continue to step while user presses the any key
     $(window).on("keydown", function (e) {
