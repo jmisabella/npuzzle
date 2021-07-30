@@ -1,5 +1,7 @@
 body {
   overflow: hidden;
+  background-color:#e9e9e9;
+  width:100%;
 }
 
 div#outer-container {
@@ -64,8 +66,8 @@ div#remaining-count {
 
 .controls button, 
 .controls select {
-  min-width: 100px;
-  width: 60%;
+  min-width: 180px !important;
+  width: 35%;
   font-size:x-large;
 }
 .controls button {
