@@ -64,17 +64,18 @@ div#remaining-count {
 
 .controls button, 
 .controls select {
-  width: 40%;
+  min-width: 100px;
+  width: 60%;
   font-size:x-large;
 }
 .controls button {
   /* margin:8px; */
   margin-left:5%;
-  min-height:80px;
+  min-height:120px;
 }
 .controls select {
   /* margin-bottom:15% !important; */
-  
+  min-height:80px;
   margin:3% 2% 2% 5%;
   /* max-width: 8% !important; */
 
