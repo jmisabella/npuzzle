@@ -68,7 +68,7 @@ div#remaining-count {
 #game-form select, 
 #game-form button {
   float:left;
-  min-width: 68px;
+  min-width: 100px;
   /* min-width: 35%; */
 }
 
@@ -76,7 +76,8 @@ div#remaining-count {
 .controls select {
   min-width: 180px !important;
   width: 35%;
-  font-size: x-large;
+  /* font-size: x-large; */
+  font-size: 24px;
   text-align: center;
 }
 .controls button {
