@@ -74,7 +74,7 @@ div#remaining-count {
 
 .controls button, 
 .controls select {
-  min-width: 240px !important;
+  min-width: 180px !important;
   width: 35%;
   font-size: x-large;
   /* font-size: 24px; */
