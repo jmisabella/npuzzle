@@ -79,7 +79,7 @@ div#remaining-count {
   font-size: x-large;
   /* font-size: 24px; */
   text-align: center;
-  pointer-events: none;
+  touch-action: manipulation;
 }
 .controls button {
   /* margin:8px; */
