@@ -81,6 +81,12 @@ div#remaining-count {
   text-align: center;
   touch-action: manipulation;
 }
+
+@media (max-width: 1000px) {
+  position: relative;
+  left: -100px; 
+}
+
 .controls button {
   /* margin:8px; */
   margin-left:5%;
