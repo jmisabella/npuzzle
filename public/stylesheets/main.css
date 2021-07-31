@@ -4,6 +4,14 @@ body {
   width:100%;
 }
 
+/* for disabling iOS zooming: iOS allows zooming of inputs whose font-size is less than 16px */
+input[type='text'],
+input[type='number'],
+input[type='button'],
+input {
+  font-size: 16px;
+}
+
 div#outer-container {
   text-align:center;
   width:auto;
@@ -68,7 +76,8 @@ div#remaining-count {
 .controls select {
   min-width: 180px !important;
   width: 35%;
-  font-size:x-large;
+  font-size: x-large;
+  text-align: center;
 }
 .controls button {
   /* margin:8px; */
