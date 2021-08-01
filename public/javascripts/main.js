@@ -233,8 +233,10 @@
         var curr = head(moves);
         var remaining = tail(moves);
         var remainingCount = remaining.length;
-        $('#board').html(boardMarkup(curr));
-        $('#remaining-moves').text(concatenate(remaining, '|'));
-        $('#remaining-count').text('remaining: ' + remainingCount)
+        if ($('#remaining-moves').text() != 'remaining: 0' && $('#remaining-moves').text() != '') {
+          $('#board').html(boardMarkup(curr));
+          $('#remaining-moves').text(concatenate(remaining, '|'));
+          $('#remaining-count').text('remaining: ' + remainingCount)
+        }
       }
 
