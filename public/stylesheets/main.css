@@ -86,11 +86,11 @@ div#remaining-count {
   .controls button, 
   .controls select {
     position: relative;
-    left: -120px;
+    left: -110px;
     width: 130%;
   }
   .controls select {
-    padding-left:120px;
+    padding-left:100px;
   }
   .grid {
     width: 100%;
