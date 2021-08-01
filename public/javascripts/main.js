@@ -53,7 +53,6 @@
     var messageInput;
 
     function init() {
-      
       var host = location.origin.replace(/^https/, 'wss').replace(/^http/, 'ws'); 
       webSocket = new WebSocket(`${host}/ws`);
       
@@ -65,13 +64,13 @@
     }
 
     function onOpen(event) {
-        consoleLog("CONNECTED");
+        consoleLog("CONNECTED to server");
     }
 
     function onClose(event) {
-        consoleLog("DISCONNECTED");
-        //// alert("Disconnected from server. Try refreshing session");
-        // init();
+        consoleLog("DISCONNECTED from server");
+        consoleLog("Re-initializing a new fresh connection so server will be available when the next new game's requested");
+        init();
     }
 
     function onError(event) {

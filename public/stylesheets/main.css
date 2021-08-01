@@ -81,7 +81,7 @@ div#remaining-count {
   touch-action: manipulation;
 }
 
-/* TODO: test this on iOS, also add a rule in here for positioning the board grid relative left but not as much as buttons */
+/* mobile device specific rules */
 @media (max-width: 900px) {
   .controls button, 
   .controls select {
