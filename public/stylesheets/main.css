@@ -73,15 +73,16 @@ div#remaining-count {
 
 .controls button, 
 .controls select {
-  min-width: 180px !important;
-  width: 35%;
+  /* min-width: 220px; */
+  width: 240px;
+  /* width: 35%; */
   font-size: x-large;
   text-align: center;
   touch-action: manipulation;
 }
 
 /* TODO: test this on iOS, also add a rule in here for positioning the board grid relative left but not as much as buttons */
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .controls button, 
   .controls select {
     position: relative;
@@ -89,7 +90,7 @@ div#remaining-count {
     width: 130%;
   }
   .controls select {
-    padding-left:60px;
+    padding-left:120px;
   }
   .grid {
     width: 100%;
