@@ -55,7 +55,6 @@
     function init() {
       var host = location.origin.replace(/^https/, 'wss').replace(/^http/, 'ws'); 
       webSocket = new WebSocket(`${host}/ws`);
-      
       webSocket.onopen = onOpen;
       webSocket.onclose = onClose;
       webSocket.onmessage = onMessage;
@@ -85,8 +84,8 @@
         // get the text from the "body" field of the json we
         // receive from the server.
         if (receivedData.body.startsWith("Invalid")) {
+          consoleLog("ERROR: " + receivedData.body); 
           alert(receivedData.body);
-          // appendServerMessageToView("Server", receivedData.body);
         } else {
           $('#remaining-moves').text(receivedData.body);
           nextMove();
@@ -106,8 +105,6 @@
     $("#board").click(function (e) {
         nextMove();
     });
-
-
     
     // continue to step while user presses the any key
     $(window).on("keydown", function (e) {
@@ -135,7 +132,6 @@
     });
    
     function sendInitToServer() {
-
         messageInput = $("#board-size").val();
         // if the trimmed message was blank, return now
         if ($.trim(messageInput) == "") {
@@ -150,18 +146,15 @@
     }
 
     function sendStepToServer() {
-
         messageInput = $("#board-size").val();
         // if the trimmed message was blank, return now
         if ($.trim(messageInput) == "") {
             return false;
         }
-
         // create the message as json
         let jsonMessage = {
             message: messageInput
         };
-
         // send our json message to the server
         sendToServer(jsonMessage);
     }

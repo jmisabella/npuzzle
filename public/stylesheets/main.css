@@ -4,14 +4,6 @@ body {
   width:100%;
 }
 
-/* for disabling iOS zooming: iOS allows zooming of inputs whose font-size is less than 16px */
-/* input[type='text'],
-input[type='number'],
-input[type='button'],
-input {
-  font-size: 16px;
-} */
-
 div#outer-container {
   text-align:center;
   width:auto;
@@ -19,8 +11,6 @@ div#outer-container {
 
 div#remaining-count {
   font-size:x-large;
-  /* margin-top:12px; */
-  /* margin-top:5%; */
 }
 
 .grid {
@@ -49,9 +39,6 @@ div#remaining-count {
   background-color: #fff; 
   display: block;
   border: solid 1px #000;
-  /* padding: 9px;
-  min-width: 40px;
-  height: 40px; */
   padding: 9px;
   min-width: 60px;
   height: 60px;
@@ -68,14 +55,11 @@ div#remaining-count {
 #game-form button {
   float:left;
   min-width: 100px;
-  /* min-width: 35%; */
 }
 
 .controls button, 
 .controls select {
-  /* min-width: 220px; */
   width: 240px;
-  /* width: 35%; */
   font-size: x-large;
   text-align: center;
   touch-action: manipulation;
@@ -101,15 +85,12 @@ div#remaining-count {
 }
 
 .controls button {
-  /* margin:8px; */
   margin-left:5%;
   min-height:120px;
 }
 .controls select {
-  /* margin-bottom:15% !important; */
   min-height:80px;
   margin:3% 2% 2% 5%;
-  /* max-width: 8% !important; */
 
   /* for Firefox */
   -moz-appearance: none;
@@ -118,16 +99,13 @@ div#remaining-count {
 }
 
 .controls {
-  /* width:255px; */
   text-align:center;
   width:auto;
   width:60%;
-  /* margin:auto; */
   float: right;
 }
 
 .controls * {
   text-align:center;
   width:auto;
-  /* width:50%; */
 }
