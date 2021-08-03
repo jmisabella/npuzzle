@@ -4,6 +4,10 @@ body {
   width:100%;
 }
 
+@viewport {  
+  orientation: portrait;  
+}  
+
 div#outer-container {
   text-align:center;
   width:auto;
