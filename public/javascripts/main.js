@@ -1,4 +1,6 @@
     $(document).ready(function() {
+        screen.lockOrientation('portrait');
+
         $('#board-size').change(function() {
           var opval = $(this).val();
           if (opval != '') {
