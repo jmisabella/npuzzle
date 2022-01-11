@@ -64,6 +64,16 @@
       $("#message-input").focus();
     }
 
+    $("#dark-mode").change(function() {
+      if (this.checked) {
+        $("body").addClass("dark-mode");
+        $("body").removeClass("light-mode");
+      } else {
+        $("body").addClass("light-mode");
+        $("body").removeClass("dark-mode");
+      }
+    })
+
     function onOpen(event) {
         consoleLog("CONNECTED to server");
     }
@@ -107,7 +117,7 @@
     $("#board").click(function (e) {
         nextMove();
     });
-    
+
     // continue to step while user presses the any key
     $(window).on("keydown", function (e) {
         if (e.which == 13 || e.which == 32 || e.which == 9) { // 13 is <enter>, 32 is <space>, 9 is <tab>
@@ -193,7 +203,11 @@
             } else if (curr == ',') {
               markup += "</li><li class='empty'>";
             } else {
-              markup += curr
+              if (curr == "*") {
+                markup += " ";
+              } else {
+                markup += curr
+              }
             }
           } else {
             if (curr == '(') {
@@ -203,7 +217,11 @@
             } else if (curr == ',') {
               markup += "</li><li>";
             } else {
-              markup += curr
+              if (curr == "*") {
+                markup += " ";
+              } else {
+                markup += curr
+              }
             }
           }
         }

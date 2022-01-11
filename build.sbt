@@ -1,5 +1,5 @@
-name := """play-websockets-1"""
-organization := "com.alvinalexander"
+name := """n-puzzle"""
+organization := "com.jmisabella"
 
 version := "0.1"
 
