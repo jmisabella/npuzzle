@@ -3,3 +3,7 @@ logs/
 !project/build.properties
 .vscode/
 .metals/
+.bsp/
+.bloop/
+*.class
+*.log
