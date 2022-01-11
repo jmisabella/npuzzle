@@ -155,8 +155,8 @@ div#remaining-count {
 
   .controls select {
     padding-left:110px !important;
-    padding-right:110px !important;
-    text-align: center !important;
+    /* padding-right:110px !important;
+    text-align: center !important; */
   }
 
   .grid {
