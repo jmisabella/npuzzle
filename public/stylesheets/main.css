@@ -152,14 +152,18 @@ div#remaining-count {
     left: -110px;
     width: 130%;
   }
-  /* .controls select {
-    padding-left:110px;
-  } */
+
+  .controls select {
+    padding-left:110px !important;
+    padding-right:110px !important;
+    text-align: center !important;
+  }
+
   .grid {
     width: 100%;
     position: relative;
     /* left:-40px; */
-    left:-35px;
+    left:-37px;
   }
 
 }
