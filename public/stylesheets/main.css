@@ -24,8 +24,10 @@ body.dark-mode .grid ul li ul li {
 
 body.dark-mode button,
 body.dark-mode select {
-  background-color: #9e9e9e!important;
-  color: #000 !important;
+  /* background-color: #9e9e9e!important; */
+  /* color: #000 !important; */
+  background-color: #111 !important;
+  color: #cecece !important;
 }
 
 body.dark-mode .grid ul li ul li.empty {
@@ -42,9 +44,8 @@ body.light-mode .grid ul li ul li.empty {
 }
 
 /* @media only screen and (orientation:portrait){
-  body {
-    height: 100vw;
-    transform: rotate(90deg);
+  .controls select {
+    padding-left:110px !important;
   }
 } */
 
@@ -62,6 +63,7 @@ div#outer-container {
   width: 270px;
   margin: auto;
   text-align: center;
+  margin-left:45%;
 }
 
 #top-panel * {
@@ -155,8 +157,10 @@ div#remaining-count {
 
   .controls select {
     padding-left:110px !important;
-    /* padding-right:110px !important;
-    text-align: center !important; */
+  }
+
+  #top-panel {
+    margin: auto !important;
   }
 
   .grid {
