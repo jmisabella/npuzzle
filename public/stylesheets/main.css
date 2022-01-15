@@ -1,13 +1,51 @@
 body {
   overflow: hidden;
-  background-color:#e9e9e9;
   width:100%;
 }
 
+body.light-mode {
+  background-color:#e9e9e9 !important;
+  color: #000;
+}
+body.light-mode .grid ul li ul li {
+  background-color: #9e9e9e!important;
+  color: #fff;
+}
+
+body.dark-mode {
+  background-color: #000 !important;
+  color: #cecece;
+}
+
+body.dark-mode .grid ul li ul li {
+  background-color: #222!important;
+  color: #cecece;
+}
+
+body.dark-mode button,
+body.dark-mode select {
+  /* background-color: #9e9e9e!important; */
+  /* color: #000 !important; */
+  background-color: #111 !important;
+  color: #cecece !important;
+}
+
+body.dark-mode .grid ul li ul li.empty {
+  background-color: #000 !important;
+}
+
+body.light-mode .grid ul li ul li {
+  background-color: #fff!important;
+  color: #000;
+}
+
+body.light-mode .grid ul li ul li.empty {
+  background-color: #000 !important;
+}
+
 /* @media only screen and (orientation:portrait){
-  body {
-    height: 100vw;
-    transform: rotate(90deg);
+  .controls select {
+    padding-left:110px !important;
   }
 } */
 
@@ -18,6 +56,38 @@ body {
 div#outer-container {
   text-align:center;
   width:auto;
+  max-width: 1024px;
+}
+
+#top-panel {
+  width: 270px;
+  margin: auto;
+  text-align: center;
+  margin-left:45%;
+}
+
+#top-panel * {
+  margin: 7px; 
+  float: left;
+}
+
+#top-panel input[type="checkbox"] {
+  margin-top: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid white;
+  background: #000;
+  color: #000;
+}
+
+#top-panel input[type="checkbox"]:checked {
+  background: lightgray;
+  color: white;
 }
 
 div#remaining-count {
@@ -84,20 +154,27 @@ div#remaining-count {
     left: -110px;
     width: 130%;
   }
+
   .controls select {
-    padding-left:110px;
+    padding-left:110px !important;
   }
+
+  #top-panel {
+    margin: auto !important;
+  }
+
   .grid {
     width: 100%;
     position: relative;
-    left:-40px;
+    /* left:-40px; */
+    left:-37px;
   }
 
 }
 
 .controls button {
   margin-left:5%;
-  min-height:120px;
+  min-height:110px;
 }
 .controls select {
   min-height:80px;
