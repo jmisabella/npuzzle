@@ -10,6 +10,8 @@
             // $("#play-pause-button").text("Pause"); 
             $("#play-pause-button").removeClass("play"); 
             $("#play-pause-button").addClass("pause"); 
+            window.clearInterval(nextMoveIntervalEvent); 
+            nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
           }
         });
 
@@ -24,6 +26,8 @@
             // $("#play-pause-button").text("Pause"); 
             $("#play-pause-button").removeClass("play"); 
             $("#play-pause-button").addClass("pause"); 
+            window.clearInterval(nextMoveIntervalEvent); 
+            nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
           }
         });
 
