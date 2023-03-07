@@ -7,6 +7,11 @@
             console.log("Sending ...");
             sendInitToServer();
             $('#board-size').val("");
+            // $("#play-pause-button").text("Pause"); 
+            $("#play-pause-button").removeClass("play"); 
+            $("#play-pause-button").addClass("pause"); 
+            window.clearInterval(nextMoveIntervalEvent); 
+            nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
           }
         });
 
@@ -18,6 +23,11 @@
             console.log("Sending ...");
             sendInitToServer();
             $('#board-size').val("");
+            // $("#play-pause-button").text("Pause"); 
+            $("#play-pause-button").removeClass("play"); 
+            $("#play-pause-button").addClass("pause"); 
+            window.clearInterval(nextMoveIntervalEvent); 
+            nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
           }
         });
 
@@ -109,14 +119,31 @@
     }
 
     window.addEventListener("load", init, false);
-
-    $("#step-button").click(function (e) {
-        nextMove();
+   
+    $("#play-pause-button").click(function (e) {
+      if ($("#play-pause-button").attr("class").indexOf("play") == -1 && !$("#play-pause-button").attr("class").indexOf("pause") == -1) {
+        $("#play-pause-button").removeClass("pause");
+        $("#play-pause-button").addClass("play");
+      } else if ($("#play-pause-button").attr("class").indexOf("play") != -1) {
+        nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
+        $("#play-pause-button").removeClass("play");
+        $("#play-pause-button").addClass("pause");
+      } else if ($("#play-pause-button").attr("class").indexOf("pause") != -1) {
+        window.clearInterval(nextMoveIntervalEvent); 
+        $("#play-pause-button").removeClass("pause");
+        $("#play-pause-button").addClass("play");
+      } else {
+        $("#play-pause-button").removeClass("play");
+        $("#play-pause-button").removeClass("pause");
+      } 
     });
-    
+
     $("#board").click(function (e) {
         nextMove();
     });
+
+    var interval = 220;
+    var nextMoveIntervalEvent = window.setInterval(nextMove, interval);
 
     // continue to step while user presses the any key
     $(window).on("keydown", function (e) {
@@ -257,6 +284,16 @@
           $('#board').html(boardMarkup(curr));
           $('#remaining-moves').text(concatenate(remaining, '|'));
           $('#remaining-count').text('remaining: ' + remainingCount)
-        }
+          if (remainingCount == 0) {
+            // $("#play-pause-button").text("");
+            $("#play-pause-button").removeClass("play");
+            $("#play-pause-button").removeClass("pause");
+            window.clearInterval(nextMoveIntervalEvent); 
+            nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
+          }
+        } //else {
+        //   $("#play-pause-button").text("");
+        //   // nextMoveIntervalEvent = window.setInterval(nextMove, interval); 
+        // }
       }
 

@@ -24,11 +24,36 @@ body.dark-mode .grid ul li ul li {
 
 body.dark-mode button,
 body.dark-mode select {
-  /* background-color: #9e9e9e!important; */
-  /* color: #000 !important; */
   background-color: #111 !important;
   color: #cecece !important;
 }
+
+body.light-mode button#play-pause-button {
+  background-image: none;
+} 
+body.light-mode button#play-pause-button.play {
+  background: url("../images/play-ffffff.png"), #6c757d !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+} 
+body.light-mode button#play-pause-button.pause {
+  background: url("../images/pause-ffffff.png"), #6c757d !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+} 
+body.dark-mode button#play-pause-button {
+  background-image: none;
+} 
+body.dark-mode button#play-pause-button.play {
+  background: url("../images/play-cecece.png"), #111 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+} 
+body.dark-mode button#play-pause-button.pause {
+  background: url("../images/pause-cecece.png"), #111 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+} 
 
 body.dark-mode .grid ul li ul li.empty {
   background-color: #000 !important;
